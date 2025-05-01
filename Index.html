@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar Anime April 2025</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    body.light { background: #fce3ec; color: #1a1a1a; }
+    body.dark { background: #1a1a2e; color: #f0f0f0; }
+
+    .top-buttons {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 10px;
+      z-index: 100;
+    }
+    body.dark .top-buttons {
+      background: rgba(20, 20, 40, 0.7);
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #7c3aed;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    button:hover { transform: scale(1.05); }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .anime-item {
+      background: #fff;
+      margin: 12px 0;
+      padding: 15px 20px;
+      border-left: 5px solid #7c3aed;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    body.dark .anime-item {
+      background: #2a2a2a;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 20px 0 10px;
+      color: #7c3aed;
+    }
+
+    #landing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+    }
+    #main {
+      display: none;
+    }
+
+    a#linkKuramanime {
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+      padding: 12px;
+      background: #7c3aed;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+    }
+    a#linkKuramanime:hover {
+      background: #5b21b6;
+    }
+  </style>
+</head>
+<body class="light">
+  <div class="top-buttons">
+    <button onclick="setMode('light')">Mode Terang</button>
+    <button onclick="setMode('dark')">Mode Gelap</button>
+    <button onclick="masuk()">Masuk</button>
+  </div>
+
+  <div id="landing">
+    <div class="container">
+      <h1>Selamat Datang</h1>
+      <p>Pilih mode tampilan dan klik Masuk untuk melihat daftar anime yang tayang minggu ini.</p>
+    </div>
+  </div>
+
+  <div id="main">
+    <div class="container">
+      <h1>Anime Tayang: 12–18 April 2025</h1>
+      <a id="linkKuramanime" href="https://v6.kuramanime.run/" target="_blank">Buka Kuramanime</a>
+      <div id="animeList"></div>
+    </div>
+  </div>
+
+  <script>
+    let isDark = false;
+
+    function setMode(mode) {
+      isDark = mode === 'dark';
+      document.body.className = isDark ? 'dark' : 'light';
+    }
+
+    function masuk() {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
+      document.body.className = isDark ? 'dark' : 'light';
+      loadAnime();
+    }
+
+    function loadAnime() {
+      const data = {
+        "Sabtu, 12 April 2025": [
+          ["17:00 WIB", "Yaiba: Samurai Legend Episode 2", "Samurai muda melawan kekuatan gelap di Jepang masa depan."],
+          ["20:00 WIB", "Levelku Mentok Setelah Membasmi Slime 300 Tahun S2E2", "Penyihir tak sengaja jadi overpower setelah membasmi slime bertahun-tahun."],
+          ["21:30 WIB", "KOWLOON GENERIC ROMANCE Episode 2", "Kisah cinta misterius di dunia paralel kota Kowloon."],
+          ["23:00 WIB", "Black Butler: Babak Penyihir Zamrud Episode 2", "Ciel dan Sebastian terlibat dalam kasus sihir kuno."],
+          ["23:30 WIB", "Aku Meninggalkan Regu Peringkat-A Episode 13", "Seorang mentor melindungi muridnya di dunia petualangan."]
+        ],
+        "Minggu, 13 April 2025": [
+          ["07:30 WIB", "To be Hero X Episode 2", "Pahlawan super eksentrik melindungi dunia dengan cara unik."],
+          ["15:30 WIB", "WITCH WATCH Episode 2", "Penyihir remaja dan teman manusianya menghadapi ancaman magis."],
+          ["21:30 WIB", "MAEBASHI WITCHES Episode 2", "Sekelompok gadis penyihir melawan kejahatan di kota kecil."]
+        ],
+        "Senin, 14 April 2025": [
+          ["11:00 WIB", "One Piece Episode 1125", "Luffy dan kru melanjutkan petualangan epik mereka di Grand Line."],
+          ["20:00 WIB", "Aharen-san wa Hakarenai Season 2 Episode 2", "Aharen dan Raido kembali dengan kisah konyol dan manis mereka."],
+          ["22:00 WIB", "Sword of the Demon Hunter Episode 2", "Pemburu iblis menemukan rahasia kelam dari masa lalunya."],
+          ["22:00 WIB", "My Hero Academia: Vigilantes Episode 2", "Pahlawan bawah tanah melindungi masyarakat tanpa izin resmi."]
+        ],
+        "Selasa, 15 April 2025": [
+          ["00:30 WIB", "The Mononoke Lecture Logs Episode 2", "Misteri supernatural diselidiki oleh guru eksentrik."],
+          ["08:00 WIB", "My Senior Brother is Too Strong Episode 8", "Senior overpower menjaga adiknya di dunia kultivasi."],
+          ["20:30 WIB", "The Shiunji Family Children Episode 2", "Kehidupan anak-anak keluarga elit yang unik."]
+        ],
+        "Rabu, 16 April 2025": [
+          ["22:21 WIB", "YOUR FORMA Episode 3", "Investigator memecahkan kasus dengan teknologi telepati."],
+          ["22:30 WIB", "The Too-Perfect Saint Episode 3", "Putri dijual ke kerajaan lain setelah pertunangan dibatalkan."],
+          ["23:45 WIB", "The Beginning After the End Episode 3", "Raja reinkarnasi hidup kembali sebagai penyihir muda."]
+        ],
+        "Kamis, 17 April 2025": [
+          ["18:30 WIB", "Kimi to Boku no Saigo no Senjo S2E2", "Kisah cinta dua pejuang dari bangsa musuh."],
+          ["22:00 WIB", "The Brilliant Healer’s New Life Episode 3", "Penyembuh sakti hidup di balik bayang-bayang dunia baru."]
+        ],
+        "Jumat, 18 April 2025": [
+          ["01:28 WIB", "WIND BREAKER SEASON 2 Episode 3", "Anak SMA bertarung demi keadilan jalanan."],
+          ["20:30 WIB", "Can a Boy-Girl Friendship Survive? Episode 3", "Pertemanan remaja diuji oleh rasa suka dan salah paham."],
+          ["21:30 WIB", "Bye Bye, Earth Season 2 Episode 2", "Petualangan gadis tanpa ras yang mencari tempat di dunia."]
+        ]
+      };
+
+      const container = document.getElementById("animeList");
+      container.innerHTML = "";
+
+      for (const hari in data) {
+        const section = document.createElement("div");
+        section.innerHTML = `<h2>${hari}</h2>`;
+        data[hari].forEach(([jam, judul, sinopsis]) => {
+          section.innerHTML += `
+            <div class="anime-item">
+              <strong>${judul}</strong> — ${jam}
+              <p>${sinopsis}</p>
+            </div>`;
+        });
+        container.appendChild(section);
+      }
+    }
+  </script>
+</body>
+</html>
